@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>For Khushi 💖</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            color: #fff;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            animation: fadeIn 2s ease-in-out forwards;
+            opacity: 0;
+        }
+
+        .heart {
+            font-size: 5rem;
+            animation: beat 1s infinite alternate;
+            color: red;
+            margin: 20px 0;
+        }
+
+        .message {
+            font-size: 1.5rem;
+            animation: fadeIn 3s ease-in-out forwards;
+            opacity: 0;
+        }
+
+        .emoji {
+            position: absolute;
+            font-size: 2rem;
+            animation: float 8s linear infinite;
+        }
+
+        @keyframes beat {
+            from { transform: scale(1); }
+            to { transform: scale(1.2); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+
+        @keyframes float {
+            from { transform: translateY(100vh) rotate(0deg);}
+            to { transform: translateY(-100vh) rotate(360deg);}
+        }
+    </style>
+</head>
+<body>
+
+    <audio id="bgMusic" autoplay loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div>
+        <h1>For My Khushi ❤️</h1>
+        <div class="heart">😍❤️😘</div>
+        <div class="message">You are the sparkle in my life! 💖🌟</div>
+    </div>
+
+    <!-- Floating emojis -->
+    <div class="emoji" style="left: 5%; animation-delay: 0s;">💞</div>
+    <div class="emoji" style="left: 20%; animation-delay: 2s;">🌹</div>
+    <div class="emoji" style="left: 35%; animation-delay: 4s;">💋</div>
+    <div class="emoji" style="left: 50%; animation-delay: 1s;">🎈</div>
+    <div class="emoji" style="left: 65%; animation-delay: 3s;">💗</div>
+    <div class="emoji" style="left: 80%; animation-delay: 5s;">🌷</div>
+    <div class="emoji" style="left: 90%; animation-delay: 2s;">💐</div>
+
+    <script>
+        // Try to play music after user interaction if autoplay is blocked
+        const music = document.getElementById('bgMusic');
+        document.body.addEventListener('click', () => {
+            music.play().catch(err => console.log("Play was blocked."));
+        });
+    </script>
+
+</body>
+</html>
